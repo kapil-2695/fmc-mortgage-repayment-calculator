@@ -33,8 +33,8 @@ This is a solution to the [Mortgage repayment calculator challenge on Frontend M
 
 ### Links
 
-- Solution URL: [Mortgage repayment calculator Solution](https://github.com/kapil-2695/fmc-testimonial-grid-section)
-- Live Site URL: [Live site - Mortgage repayment calculator](https://kapil-2695.github.io/fmc-testimonial-grid-section)
+- Solution URL: [Mortgage repayment calculator Solution](https://github.com/kapil-2695/fmc-mortgage-repayment-calculator)
+- Live Site URL: [Live site - Mortgage repayment calculator](https://kapil-2695.github.io/fmc-mortgage-repayment-calculator)
 
 
 ## My process
