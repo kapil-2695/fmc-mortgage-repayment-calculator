@@ -1,0 +1,97 @@
+/* root definitions */
+:root {
+    --clr-lime: hsl(61, 70%, 52%);
+    --clr-lime-15: hsla(61, 70%, 52%, 0.15);
+    --clr-red: hsl(4, 69%, 50%);
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-slate-900: hsl(202, 55%, 16%);
+    --clr-slate-700: hsl(200, 24%, 40%);
+    --clr-slate-500: hsl(200, 26%, 54%);
+    --clr-slate-300: hsl(203, 41%, 72%);
+    --clr-slate-100: hsl(202, 86%, 94%);
+
+    --tp-1: normal normal 700 3.5rem/1.25 "Plus Jakarta Sans", sans-serif;
+    --tp-2: normal normal 700 1.5rem/1.25 "Plus Jakarta Sans", sans-serif;
+    --tp-3: normal normal 700 1.125rem/1.25 "Plus Jakarta Sans", sans-serif;
+    --tp-4: normal normal 500 1rem/1.5 "Plus Jakarta Sans", sans-serif;
+    --tp-5: normal normal 500 0.875rem/1.5 "Plus Jakarta Sans", sans-serif;
+
+    --main-spacing-block: 2rem;
+    --main-spacing-inline: clamp(0.5rem, 16vw - 1rem, 1.5rem);
+    --amounts-spacing: 1rem;
+    --result-content-gap: 1.5rem;
+}
+
+
+/* default reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--clr-slate-900);
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+img { width: 100%; height: 100%; object-fit: cover; }
+ul { list-style: none; }
+a { text-decoration: none; font: inherit; }
+input { font: inherit; border: none; }
+input:focus { outline: none; }
+fieldset { border: none; }
+button { font: inherit; }
+.sr-only {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    inset: -1px -1px;
+    color: transparent;
+    font-size: 0;
+}
+
+
+/* typography */
+.input__heading, 
+.result__heading { 
+    font: var(--tp-2); 
+}
+.result__heading { 
+    color: var(--clr-white); 
+}
+label { 
+    font: var(--tp-4); 
+    color: var(--clr-slate-700);
+}
+label.radio { 
+    font: var(--tp-3); 
+    color: var(--clr-slate-900); 
+}
+.symbol { 
+    color: var(--clr-slate-700); 
+}
+input[type="number"], button { 
+    font: var(--tp-3); 
+}
+p, h3 { 
+    font: var(--tp-4); 
+}
+.symbol { 
+    font: var(--tp-3); 
+    color: var(--clr-slate-700); 
+}
+.input__clear-all { 
+    font: var(--tp-4); 
+    text-decoration: underline; 
+    text-underline-offset: 3px;
+}
+.result__info,
+.mortgage-monthly-heading,
+.mortgage-total-heading { 
+    color: var(--clr-slate-300); 
+}
+.mortgage-monthly-value { 
+    font: var(--tp-1); 
+    color: var(--clr-lime); 
+}
+.mortgage-total-value { 
+    font: var(--tp-2); 
+    color: var(--clr-white); 
+}

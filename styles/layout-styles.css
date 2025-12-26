@@ -1,0 +1,126 @@
+
+/* layout - mobile first */
+.wrapper {
+    display: grid;
+    background: var(--clr-slate-100);
+    place-content: center;
+    min-width: fit-content;
+    min-height: 100vh;
+}
+.mortgage {
+    display: grid;
+    background: var(--clr-white);
+    width: fit-content;
+    max-width: 43rem;
+}
+.mortgage__input {
+    display: grid;
+    gap: 1.5rem;
+    padding: var(--main-spacing-block) var(--main-spacing-inline);
+}
+.input__header {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.input__form {
+    display: grid;
+    gap: 1.5rem;
+}
+.input-form__term-rate {
+    display: grid;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+label:not(.radio) {
+    margin-block-end: 0.75rem;
+}
+.input-form__type {
+    display: grid;
+    gap: 0.75rem;
+}
+fieldset > label:nth-child(1) {
+    margin-block-end: 0rem;
+}
+
+.calculate-btn-icon {
+    flex: 0 0 auto;
+}
+
+.mortgage__result {
+    display: grid;
+    background: var(--clr-slate-900);   
+}
+.result-content {
+    display: grid;
+    gap: var(--result-content-gap);
+    align-self: start;
+    padding: var(--main-spacing-block) var(--main-spacing-inline);
+}
+.result__header {
+    display: grid; 
+    gap: 1rem;
+}
+.result__amounts {
+    display: grid;
+    gap: var(--amounts-spacing);
+    background: rgba(0, 0, 0, 0.25);
+    padding: var(--amounts-spacing);
+    border-radius: 0.5rem;
+    border-top: 0.25rem solid var(--clr-lime);
+}
+.result-amounts__values {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.mortgage__result.result-empty .result-content {
+    text-align: center;
+    align-self: center;
+    padding: var(--main-spacing-block) var(--main-spacing-inline);
+}
+.result__illustration {
+    max-width: 12rem;
+    max-height: 12rem;
+    justify-self: center;
+}
+
+/* hiding elements */
+.hide {
+    display: none;
+}
+
+
+/* layout - tablet */
+@media screen and (min-width: 32rem) {
+    :root {
+        --main-spacing-block: 2.5rem;
+        --main-spacing-inline: 2.5rem;
+        --amounts-spacing: 2rem;
+        --result-content-gap: 2.5rem;
+    }
+    .mortgage {
+        margin: 2.5rem;
+        border-radius: 1.5rem;
+    }
+    .input-form__term-rate {
+        grid-template-columns: 1fr 1fr;
+    }
+    .mortgage__result {
+        border-radius: 0 0 1.5rem 1.5rem;
+    }
+}
+
+
+/* layout - desktop */
+@media screen and (min-width: 55rem) {
+    .mortgage {
+        grid-template: 1fr / 1fr 1fr;
+        max-width: 63rem;
+        overflow: hidden;
+    }
+    .mortgage__result {
+        border-bottom-left-radius: 5rem;
+    }
+}

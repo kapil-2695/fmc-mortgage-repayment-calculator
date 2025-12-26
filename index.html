@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./styles/global-styles.css">
+  <link rel="stylesheet" href="./styles/component-styles.css">
+  <link rel="stylesheet" href="./styles/layout-styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital@0;1&display=swap" rel="stylesheet">
+
+  <title>Frontend Mentor | Mortgage repayment calculator</title>
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <h1 class="sr-only">Mortgage Calculator</h1>
+
+    <main class="mortgage">
+
+      <section class="mortgage__input">
+        <header class="input__header">
+          <h2 class="input__heading">Mortgage Calculator</h2>
+
+          <a class="input__clear-all link" id="clear-input">Clear All</a>
+        </header>
+
+        <form class="input__form" id="input-form">
+
+          <article class="number-field prefix">
+            <label for="amount">Mortgage Amount</label>
+            <div class="input-wrapper">
+              <input type="number" min="0" id="amount" name="amount" placeholder="" />
+              <span class="symbol currency-symbol">$</span>
+            </div>
+          </article>
+
+          <section class="input-form__term-rate">
+
+            <article class="number-field suffix">
+              <label for="term">Mortgage Term</label>
+              <div class="input-wrapper">
+                <input type="number" min="0" id="term" name="term" placeholder="" />
+                <span class="symbol term-symbol">year(s)</span>
+              </div>
+            </article>
+
+            <article class="number-field suffix">
+              <label for="rate">Interest Rate</label>
+              <div class="input-wrapper">
+                <input type="number" min="0" step="0.01" id="rate" name="rate" placeholder="" />
+                <span class="symbol rate-symbol">%</span>
+              </div>
+            </article>
+
+          </section>
+
+          <fieldset class="input-form__type" id="type">
+            <label>Mortgage Type</label>
+
+            <label class="radio" id="repayment-option">
+              <input type="radio" id="repayment" name="type" value="repayment">
+              <span class="indicator"></span>
+              Repayment
+            </label>
+
+            <label class="radio" id="interest-only-option">
+              <input type="radio" id="interest-only" name="type" value="interest-only">
+              <span class="indicator"></span>
+              Interest only
+            </label>
+          </fieldset>
+
+          <button class="btn" type="submit" id="calculate-btn">
+            <figure class="calculate-btn-icon">
+              <img src="./assets/images/icon-calculator.svg" alt="calculator icon">
+            </figure>
+            Calculate Repayments
+          </button>
+
+        </form>
+
+      </section>
+
+      <section class="mortgage__result result-empty" id="result-section-empty">
+        <div class="result-content">
+
+          <figure class="result__illustration">
+            <img src="./assets/images/illustration-empty.svg" alt="calculation tools illustration">
+          </figure>
+
+          <h2 class="result__heading">Results shown here</h2>
+
+          <p class="result__info" id="empty-result-info">
+            Complete the form and click “calculate repayments” to see what your monthly repayments would be.
+          </p>
+
+        </div>
+
+      </section>
+
+      <section class="mortgage__result hide" id="result-section">
+        <div class="result-content">
+
+          <header class="result__header">
+            <h2 class="result__heading">Your results</h2>
+            <p class="result__info" id="result-info">
+              Your results are shown below based on the information you provided. To adjust the results, edit the form
+              and click “calculate repayments” again.
+            </p>
+          </header>
+
+          <section class="result__amounts">
+            <section class="result-amounts__values">
+              <h3 class="mortgage-monthly-heading" id="mortgage-monthly-heading">Your monthly repayments</h3>
+              <p class="mortgage-monthly-value" id="mortgage-monthly-value">₹0.00</p>
+            </section>
+
+            <hr>
+
+            <section class="result-amounts__values">
+              <h3 class="mortgage-total-heading" id="mortgage-total-heading">Total you'll repay over the term</h3>
+              <p class="mortgage-total-value" id="mortgage-total-value">₹0.00</p>
+            </section>
+          </section>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <script type="module" src="script.js"></script>
+
+</body>
+
+</html>

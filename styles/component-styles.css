@@ -1,0 +1,136 @@
+/* number field component */
+.number-field {
+    display: grid;
+}
+.input-wrapper {
+    display: flex;
+    border: 1px solid var(--clr-slate-500);
+    align-items: center;
+    border-radius: 0.25rem;
+    min-width: fit-content;
+}
+.input-wrapper > input {
+    padding: 0.75rem 1rem;
+    flex-grow: 1;
+    border-radius: inherit;
+}
+.input-wrapper > .symbol {
+    flex: 0 0 auto;
+    padding: 0.75rem 1rem;
+    background: var(--clr-slate-100);
+}
+.input-wrapper > input:focus ~ .symbol {
+    background: var(--clr-lime);
+    color: var(--clr-slate-900);
+}
+.input-wrapper:has(input:focus) {
+    border-color: var(--clr-lime);
+}
+.number-field.prefix > .input-wrapper > .symbol {
+    order: -1;
+}
+.number-field.prefix .symbol {
+    border-radius: 0.25rem 0 0 0.25rem;
+}
+.number-field.suffix .symbol {
+    border-radius: 0 0.25rem 0.25rem 0;
+}
+
+.number-field:has(.input-wrapper > input.empty)::after,
+fieldset.empty::after {
+    content: "This field is required.";
+    margin-block-start: 0.5rem;
+    color: var(--clr-red);
+    font: var(--tp-5);
+}
+fieldset.empty::after {
+    margin-block-start: -0.25rem;
+}
+
+.input-wrapper:has(input.empty) {
+    border-color: var(--clr-red);
+}
+.input-wrapper:has(input.empty) > .symbol {
+    background: var(--clr-red);
+    color: var(--clr-white);
+}
+
+
+
+/* button component */
+.btn {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    justify-self: left;
+    padding: 1rem clamp(0.5rem, 32vw - 3.5rem, 2.5rem);
+    border-radius: 999px;
+    border: none;
+    background: var(--clr-lime);
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: color-mix(in srgb, var(--clr-lime) 100%, var(--clr-white) 50%);
+}
+
+
+
+/* link component */
+.link {
+    color: var(--clr-slate-700);
+    cursor: pointer;
+    width: fit-content;
+}
+.link:hover {
+    color: var(--clr-slate-900);
+}
+
+
+
+/* radio component */
+.radio {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--clr-slate-700);
+    border-radius: 0.25rem;
+}
+.radio input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.radio .indicator {
+    width: 1.1rem; 
+    height: 1.1rem;
+    border: 2px solid var(--clr-slate-700);
+    border-radius: 50%;
+}
+.radio input:checked + .indicator {
+    border-radius: 50%;
+    background: var(--clr-lime);
+    box-shadow: 0 0 0 0.15rem var(--clr-white) inset;
+    border-color: var(--clr-lime);
+}
+.radio:has(input:checked) {
+    background: var(--clr-lime-15);
+    border-color: var(--clr-lime);
+}
+.radio:hover {
+    border: 1px solid var(--clr-lime);
+}
+
+
+/* additional tweaks */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+input { min-width: 2rem; width: 100%; }
